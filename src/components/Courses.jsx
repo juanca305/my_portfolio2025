@@ -34,10 +34,10 @@ const Courses = () => {
         <h2 className={styles.sectionHeadText}>
           Completed Courses & Learning Journey.
         </h2> */}
-        <p className={`${styles.sectionSubText} mt-6`}>
+        <p className={`${styles.sectionSubText} mt-8`}>
           What I've Learned lately
         </p>
-        <h2 className={`${styles.sectionHeadText} mt-4`}>
+        <h2 className={`${styles.sectionHeadText} mt-6`}>
           Completed Courses & Learning Journey.
         </h2>
       </motion.div>
