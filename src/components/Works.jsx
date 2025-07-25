@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 
-import Tilt from "react-tilt";
+//import Tilt from "react-tilt";
+import Tilt from "react-parallax-tilt";
+
 import { motion } from "framer-motion";
 import { Globe } from "lucide-react";
 
@@ -45,11 +47,10 @@ const ProjectCard = ({
       }
     >
       <Tilt
-        options={{
-          max: isMobile ? 0 : 45,
-          scale: 1,
-          speed: isMobile ? 0 : 450,
-        }}
+        tiltMaxAngleX={isMobile ? 0 : 45}
+        tiltMaxAngleY={isMobile ? 0 : 45}
+        scale={1}
+        transitionSpeed={isMobile ? 0 : 450}
         className="bg-tertiary hover:bg-gradient-to-br hover:from-[#1a1a2e] hover:to-[#0f0f1a] p-5 rounded-2xl sm:w-[360px] w-full flex flex-col justify-between h-full shadow-[0_10px_30px_rgba(0,0,0,0.6)] border border-[#2c2c3d] hover:-translate-y-4 transition-transform duration-300"
       >
         <div className="relative w-full h-full">
