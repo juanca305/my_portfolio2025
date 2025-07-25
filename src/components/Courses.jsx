@@ -30,8 +30,14 @@ const Courses = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>What I've Learned lately</p>
+        {/* <p className={styles.sectionSubText}>What I've Learned lately</p>
         <h2 className={styles.sectionHeadText}>
+          Completed Courses & Learning Journey.
+        </h2> */}
+        <p className={`${styles.sectionSubText} mt-6`}>
+          What I've Learned lately
+        </p>
+        <h2 className={`${styles.sectionHeadText} mt-4`}>
           Completed Courses & Learning Journey.
         </h2>
       </motion.div>
