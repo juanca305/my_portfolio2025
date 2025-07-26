@@ -30,16 +30,16 @@ const Courses = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        {/* <p className={styles.sectionSubText}>What I've Learned lately</p>
+        <p className={styles.sectionSubText}>What I've Learned lately</p>
         <h2 className={styles.sectionHeadText}>
           Completed Courses & Learning Journey.
-        </h2> */}
-        <p className={`${styles.sectionSubText} mt-8`}>
+        </h2>
+        {/* <p className={`${styles.sectionSubText} mt-8`}>
           What I've Learned lately
         </p>
         <h2 className={`${styles.sectionHeadText} mt-6`}>
           Completed Courses & Learning Journey.
-        </h2>
+        </h2> */}
       </motion.div>
 
       <div className="mt-20 flex flex-wrap gap-10 justify-center">
