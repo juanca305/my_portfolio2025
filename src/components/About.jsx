@@ -43,7 +43,7 @@ const About = () => {
         <h2 className={styles.sectionHeadText}>Overview.</h2>
       </motion.div>
 
-      <motion.p
+      <motion.div
         variants={fadeIn("", "tween", 0.3, 2)} // smoother timing
         initial="hidden"
         whileInView="show"
@@ -94,7 +94,7 @@ const About = () => {
             Let’s build something people will love to interact with.
           </span>
         </motion.p>
-      </motion.p>
+      </motion.div>
 
       <div className="mt-20 flex flex-wrap gap-10">
         {services.map((service, index) => (
