@@ -8,9 +8,9 @@ import {
   Navbar,
   Tech,
   Works,
-  StarsCanvas,
   Courses,
 } from "./components";
+import { MergedCanvas } from "./components/canvas";
 
 const App = () => {
   return (
@@ -20,15 +20,19 @@ const App = () => {
           <Navbar />
           <Hero />
         </div>
+
         <About />
         <Experience />
         <Tech />
         <Works />
         <Courses />
         <LearningNow />
-        <div className=" relative z-0">
+
+        <div className="relative z-0">
           <Contact />
-          <StarsCanvas />
+          <div className="absolute inset-0 w-screen h-full z-[-1] pointer-events-none">
+            <MergedCanvas scene="stars" />
+          </div>
         </div>
       </div>
     </BrowserRouter>

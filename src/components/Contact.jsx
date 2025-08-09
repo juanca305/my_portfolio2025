@@ -1,17 +1,14 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import { CheckCircle, XCircle } from "lucide-react";
 
 import { styles } from "../styles";
-import { EarthCanvas } from "./canvas";
+import { MergedCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 
-import { CheckCircle, XCircle } from "lucide-react";
-
 const Contact = () => {
-  const [feedback, setFeedback] = useState({ type: "", message: "" });
-
   const formRef = useRef();
   const [form, setForm] = useState({
     name: "",
@@ -19,6 +16,7 @@ const Contact = () => {
     message: "",
   });
   const [loading, setLoading] = useState(false);
+  const [feedback, setFeedback] = useState({ type: "", message: "" });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -48,15 +46,11 @@ const Contact = () => {
           type: "success",
           message: "Thank you, I will get back to you as soon as possible.",
         });
-        setForm({
-          name: "",
-          email: "",
-          message: "",
-        });
+        setForm({ name: "", email: "", message: "" });
       })
       .catch((error) => {
-        setLoading(false);
         console.log(error);
+        setLoading(false);
         setFeedback({
           type: "error",
           message: "Something went wrong. Please try again.",
@@ -66,13 +60,11 @@ const Contact = () => {
 
   useEffect(() => {
     if (feedback.message) {
-      // Add fadeOut class before clearing
       const fadeTimer = setTimeout(() => {
         const toast = document.getElementById("feedback-toast");
         if (toast) toast.classList.add("animate-fadeOut");
-      }, 4500); // Start fade-out 0.5s before removal
+      }, 4500);
 
-      // Actually clear it after fade out
       const clearTimer = setTimeout(() => {
         setFeedback({ type: "", message: "" });
       }, 5000);
@@ -85,88 +77,156 @@ const Contact = () => {
   }, [feedback]);
 
   return (
-    <div className=" xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
-      <motion.div
-        variants={slideIn("left", "tween", 0.2, 1)}
-        className=" flex-[0.75] bg-black-100 p-8 rounded-2xl"
-      >
-        <p className={styles.sectionSubText}>Get in touch from everywhere</p>
-        <h3 className={styles.heroHeadText}>Contact.</h3>
-
-        <form
-          ref={formRef}
-          onSubmit={handleSubmit}
-          className=" mt-12 flex flex-col gap-8"
-        >
-          <label className="flex flex-col ">
-            <span className=" text-white font-medium mb-4">Your name</span>
-            <input
-              type="text"
-              name="name"
-              value={form.name}
-              onChange={handleChange}
-              placeholder="What's your name?"
-              className=" bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
-            />
-          </label>
-
-          <label className="flex flex-col ">
-            <span className=" text-white font-medium mb-4">Your Email</span>
-            <input
-              type="email"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-              placeholder="What's your email?"
-              className=" bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
-            />
-          </label>
-
-          <label className="flex flex-col ">
-            <span className=" text-white font-medium mb-4">Your message</span>
-            <textarea
-              rows="7"
-              name="message"
-              value={form.message}
-              onChange={handleChange}
-              placeholder="What do you want to say?"
-              className=" bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
-            />
-          </label>
-
-          {feedback.message && (
-            <div
-              id="feedback-toast"
-              className={`mt-4 flex items-center gap-3 p-4 rounded-lg border shadow-md animate-fadeIn ${
-                feedback.type === "success"
-                  ? "bg-green-100 border-green-400 text-green-800"
-                  : "bg-red-100 border-red-400 text-red-800"
-              }`}
-            >
-              {feedback.type === "success" ? (
-                <CheckCircle className="w-5 h-5" />
-              ) : (
-                <XCircle className="w-5 h-5" />
-              )}
-              <span className="text-sm">{feedback.message}</span>
-            </div>
-          )}
-
-          <button
-            type="submit"
-            className=" bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl"
+    <div className="relative w-full min-h-screen overflow-hidden">
+      {/* Content container with margin/padding */}
+      <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10">
+        
+          {/* Contact form */}
+          <motion.div
+            variants={slideIn("left", "tween", 0.2, 1)}
+            initial="hidden"
+            animate="show"
+            whileHover={{}} // needed so `whileInView` works properly
+            whileInView={{
+              y: [0, -6, 0],
+              transition: {
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              },
+            }}
+            viewport={{ once: true, amount: 0.6 }}
+            className="flex-[0.75] bg-black-100/60 p-8 rounded-2xl z-10 relative
+             shadow-[inset_0_3px_1px_rgba(255,255,255,0.1),_0_10px_30px_rgba(0,0,0,0.6)] border border-white/10"
           >
-            {loading ? "Sending..." : "Send"}
-          </button>
-        </form>
-      </motion.div>
+            <p className={styles.sectionSubText}>
+              Get in touch from everywhere
+            </p>
+            <h3 className={styles.heroHeadText}>Contact.</h3>
 
-      <motion.div
-        variants={slideIn("right", "tween", 0.2, 1)}
-        className=" xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
-      >
-        <EarthCanvas />
-      </motion.div>
+            <form
+              ref={formRef}
+              onSubmit={handleSubmit}
+              className="mt-12 flex flex-col gap-8"
+            >
+              <label className="flex flex-col">
+                <span className="text-white font-medium mb-4">Your name</span>
+                <input
+                  type="text"
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
+                  placeholder="What's your name?"
+                  // className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 transition duration-300"
+                  className="w-full bg-transparent border border-white/20 rounded-md px-4 py-2 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition duration-300"
+                />
+              </label>
+
+              <label className="flex flex-col">
+                <span className="text-white font-medium mb-4">Your Email</span>
+                <input
+                  type="email"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  placeholder="What's your email?"
+                  // className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 transition duration-300"
+                  className="w-full bg-transparent border border-white/20 rounded-md px-4 py-2 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition duration-300"
+                />
+              </label>
+
+              <label className="flex flex-col">
+                <span className="text-white font-medium mb-4">
+                  Your message
+                </span>
+                <textarea
+                  rows="7"
+                  name="message"
+                  value={form.message}
+                  onChange={handleChange}
+                  placeholder="What do you want to say?"
+                  // className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 transition duration-300"
+
+                  className="w-full bg-transparent border border-white/20 rounded-md px-4 py-2 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition duration-300"
+                />
+              </label>
+
+              {feedback.message && (
+                <div
+                  id="feedback-toast"
+                  className={`mt-4 flex items-center gap-3 p-4 rounded-lg border shadow-md animate-fadeIn ${
+                    feedback.type === "success"
+                      ? "bg-green-100 border-green-400 text-green-800"
+                      : "bg-red-100 border-red-400 text-red-800"
+                  }`}
+                >
+                  {feedback.type === "success" ? (
+                    <CheckCircle className="w-5 h-5" />
+                  ) : (
+                    <XCircle className="w-5 h-5" />
+                  )}
+                  <span className="text-sm">{feedback.message}</span>
+                </div>
+              )}
+
+              {/* <button
+              type="submit"
+              className="bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl"
+            >
+              {loading ? "Sending..." : "Send"}
+            </button> */}
+
+              {/* <div className="flex justify-center mt-6" >
+              <button
+                type="submit"
+                className="relative overflow-hidden px-8 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold shadow-md shadow-primary outline-none w-fit transition-all duration-300 group"
+              >
+                <span className="relative z-10 flex items-center">
+                  {loading ? "Sending..." : "Send"}
+                  {!loading && (
+                    <span className="ml-2 inline-block group-hover:translate-x-1 transition-transform duration-300">
+                      🚀
+                    </span>
+                  )}
+                </span>
+                <span className="absolute inset-0 bg-cyan-400 opacity-0 group-hover:opacity-10 blur-xl transition duration-500"></span>
+              </button>
+            </div> */}
+              <div className="flex justify-center mt-6">
+                <button
+                  type="submit"
+                  className="relative px-8 py-3 rounded-xl font-bold text-white cursor-pointer
+               bg-gradient-to-r from-cyan-500 to-blue-600
+               shadow-md shadow-primary transition-all duration-300 ease-in-out
+               hover:from-blue-600 hover:to-cyan-500
+               hover:shadow-xl hover:scale-105
+               active:scale-95 group overflow-hidden"
+                >
+                  <span className="relative z-10 flex items-center">
+                    {loading ? "Sending..." : "Send"}
+                    {!loading && (
+                      <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">
+                        🚀
+                      </span>
+                    )}
+                  </span>
+
+                  {/* Glow overlay */}
+                  <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-5 blur-xl rounded-xl transition duration-500" />
+                </button>
+              </div>
+            </form>
+          </motion.div>
+        
+
+        {/* Earth Canvas */}
+        <motion.div
+          variants={slideIn("right", "tween", 0.2, 1)}
+          className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px] relative z-10"
+        >
+          <MergedCanvas scene="earth" />
+        </motion.div>
+      </div>
     </div>
   );
 };

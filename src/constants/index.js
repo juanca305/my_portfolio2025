@@ -51,7 +51,7 @@ import {
   icon_meta,
   freecodecamp,
   icon_jsmastery,
-  icon_book
+  icon_book,
 } from "../assets";
 
 export const navLinks = [
@@ -63,14 +63,14 @@ export const navLinks = [
     id: "work",
     title: "Work",
   },
-  
+
   {
     id: "projects",
     title: "Projects",
   },
   {
     id: "skills",
-    title: "Skills"
+    title: "Skills",
   },
   {
     id: "contact",
@@ -138,10 +138,7 @@ const technologies = [
     name: "MongoDB",
     icon: mongodb,
   },
-  {
-    name: "Three JS",
-    icon: three,
-  },
+
   {
     name: "Git",
     icon: git,
@@ -150,10 +147,7 @@ const technologies = [
     name: "GitHub",
     icon: github,
   },
-  {
-    name: "Figma",
-    icon: figma,
-  },
+
   {
     name: "Next JS",
     icon: nextjs,
@@ -162,13 +156,27 @@ const technologies = [
     name: "Express JS",
     icon: expressjs,
   },
-  {
-    name: "Stripe",
-    icon: stripe,
-  },
+
+
+
+  // {
+  //   name: "Git",
+  //   icon: git,
+  // },
+  // {
+  //   name: "GitHub",
+  //   icon: github,
+  // },
+
+  // {
+  //   name: "Next JS",
+  //   icon: nextjs,
+  // },
+  // {
+  //   name: "Express JS",
+  //   icon: expressjs,
+  // },
 ];
-
-
 
 const experiences = [
   {
@@ -667,12 +675,12 @@ const completedCourses = [
       "Completed the entire course on layouts, Flexbox, Grid, and media queries.",
   },
 
-   {
+  {
     title: "ReactJS and full stack projects",
     icon: icon_jsmastery, // Add a custom icon for JavaScript Mastery
     instructor: "JavaScript Mastery (YouTube)",
     description:
-      "Followed several very instructive project-based tutorials. Learned advanced React patterns, API integration, and modern UI/UX design."
+      "Followed several very instructive project-based tutorials. Learned advanced React patterns, API integration, and modern UI/UX design.",
   },
 
   {
@@ -680,7 +688,7 @@ const completedCourses = [
     icon: icon_book, // Add a book icon
     instructor: "O'ReillyFederico Kereki, Robin Wieruch, Rob Percival",
     description:
-      " Read multiple books to master React, Javascript and performance techniques. Built real-world apps while applying key concepts."
+      " Read multiple books to master React, Javascript and performance techniques. Built real-world apps while applying key concepts.",
   },
 ];
 

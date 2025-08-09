@@ -23,9 +23,7 @@ const SectionWrapper = (Component, idName) => {
 
 export default SectionWrapper;
 
-// //******* CONTINUED AT 1: 22 */
 
-/////////////////////////////////////////////////////////////////
 
 // import { motion } from "framer-motion";
 // import { styles } from "../styles";
