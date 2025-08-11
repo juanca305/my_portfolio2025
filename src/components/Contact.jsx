@@ -18,6 +18,9 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [feedback, setFeedback] = useState({ type: "", message: "" });
 
+  
+
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
@@ -77,7 +80,7 @@ const Contact = () => {
   }, [feedback]);
 
   return (
-    <div className="relative w-full min-h-screen overflow-hidden">
+    <div className="relative w-full min-h-screen overflow-hidden  ">
       {/* Content container with margin/padding */}
       <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10">
         

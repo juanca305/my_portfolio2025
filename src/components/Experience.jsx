@@ -9,6 +9,7 @@ import { styles } from "../styles";
 import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
+import SectionDivider from "./SectionDivider";
 
 const ExperienceCard = ({ experience }) => (
   <VerticalTimelineElement
@@ -52,6 +53,7 @@ const Experience = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
+        <SectionDivider />
         <p className={styles.sectionSubText}>What I have done so far</p>
         <h2 className={styles.sectionHeadText}>Work Experience.</h2>
       </motion.div>

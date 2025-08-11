@@ -4,11 +4,15 @@ import { styles } from "../styles";
 import { completedCourses } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { SectionWrapper } from "../hoc";
+import SectionDivider from "./SectionDivider";
 
 const CourseCard = ({ index, title, icon, instructor, description }) => (
   <Tilt className="xs:w-[250px] w-full">
     <motion.div
-      variants={fadeIn("right", "spring", index * 0.3, 0.75)}
+      variants={fadeIn("right", "spring", index * 0.1, 0.75)}
+      whileInView="show"
+      viewport={{ once: false, amount: 0.2 }} // triggers as soon as 20% is visible
+      initial="hidden"
       className="w-full h-[360px] green-pink-gradient p-[1px] rounded-[20px] shadow-card flex"
     >
       <div className="bg-tertiary rounded-[20px] py-5 px-4 w-full h-full flex flex-col items-center text-center">
@@ -30,16 +34,11 @@ const Courses = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
+        <SectionDivider />
         <p className={styles.sectionSubText}>What I've Learned lately</p>
         <h2 className={styles.sectionHeadText}>
           Completed Courses & Learning Journey.
         </h2>
-        {/* <p className={`${styles.sectionSubText} mt-8`}>
-          What I've Learned lately
-        </p>
-        <h2 className={`${styles.sectionHeadText} mt-6`}>
-          Completed Courses & Learning Journey.
-        </h2> */}
       </motion.div>
 
       <div className="mt-20 flex flex-wrap gap-10 justify-center">

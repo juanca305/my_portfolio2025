@@ -11,6 +11,7 @@ import {
   Courses,
 } from "./components";
 import { MergedCanvas } from "./components/canvas";
+import Feedbacks from "./components/Feedbacks";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <Experience />
         <Tech />
         <Works />
+        <Feedbacks />
         <Courses />
         <LearningNow />
 

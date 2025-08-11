@@ -13,6 +13,7 @@ import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
 import { GithubIcon } from "lucide-react";
+import SectionDivider from "./SectionDivider";
 
 const ProjectCard = ({
   index,
@@ -136,6 +137,7 @@ const Works = () => {
         whileInView="show"
         viewport={{ once: false, amount: 0.1 }}
       >
+        <SectionDivider />
         <p className={styles.sectionSubText}>My Projects...</p>
         <h2 className={styles.sectionHeadText}>Projects.</h2>
       </motion.div>

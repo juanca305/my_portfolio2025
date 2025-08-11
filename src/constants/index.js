@@ -176,6 +176,23 @@ const technologies = [
   //   name: "Express JS",
   //   icon: expressjs,
   // },
+  // {
+  //   name: "Git",
+  //   icon: git,
+  // },
+  // {
+  //   name: "GitHub",
+  //   icon: github,
+  // },
+
+  // {
+  //   name: "Next JS",
+  //   icon: nextjs,
+  // },
+  // {
+  //   name: "Express JS",
+  //   icon: expressjs,
+  // },
 ];
 
 const experiences = [
