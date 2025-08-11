@@ -52,11 +52,43 @@ const ExperienceCard = ({ experience }) => (
 const Experience = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+      {/* <motion.div variants={textVariant()}>
         <SectionDivider />
         <p className={styles.sectionSubText}>What I have done so far</p>
         <h2 className={styles.sectionHeadText}>Work Experience.</h2>
-      </motion.div>
+      </motion.div> */}
+      {/* HEADER SECTION */}
+      <div className="mb-10 text-left">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+          viewport={{ once: false, amount: 0.3 }}
+        >
+          <SectionDivider />
+        </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          viewport={{ once: false, amount: 0.3 }}
+          className={styles.sectionSubText}
+        >
+          What I have done so far
+        </motion.p>
+
+        <motion.h2
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.0, delay: 0.7, ease: "easeOut" }}
+          viewport={{ once: false, amount: 0.3 }}
+          className={styles.sectionHeadText}
+        >
+          Work Experience.
+        </motion.h2>
+      </div>
+
       <div className="mt-20 flex flex-col">
         <VerticalTimeline lineColor="#915eff">
           {experiences.map((experience, index) => (

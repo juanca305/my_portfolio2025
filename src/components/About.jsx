@@ -9,6 +9,37 @@ import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 import SectionDivider from "./SectionDivider";
 
+// const ServiceCard = ({ index, title, icon }) => (
+//   <Tilt
+//     tiltMaxAngleX={45}
+//     tiltMaxAngleY={45}
+//     scale={1}
+//     transitionSpeed={450}
+//     className="xs:w-[250px] w-full"
+//   >
+//     <motion.div
+//       // variants={fadeIn("right", "spring", index * 0.5, 0.75)}
+//       variants={fadeIn("right", "spring", index * 0.1, 0.75)} // less delay
+//       initial="hidden"
+//       whileInView="show"
+//       viewport={{ once: true, amount: 0.2 }} // triggers earlier
+//       className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
+//     >
+//       <div className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col">
+//         <img
+//           src={icon}
+//           alt="web-development"
+//           className="w-16 h-16 object-contain"
+//         />
+
+//         <h3 className="text-white text-[20px] font-bold text-center">
+//           {title}
+//         </h3>
+//       </div>
+//     </motion.div>
+//   </Tilt>
+// );
+
 const ServiceCard = ({ index, title, icon }) => (
   <Tilt
     tiltMaxAngleX={45}
@@ -18,20 +49,15 @@ const ServiceCard = ({ index, title, icon }) => (
     className="xs:w-[250px] w-full"
   >
     <motion.div
-      // variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-      variants={fadeIn("right", "spring", index * 0.1, 0.75)} // less delay
+      variants={fadeIn("right", "spring", 0, 0.75)}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.2 }} // triggers earlier
+      viewport={{ once: false, amount: 0.2 }} // re-triggers & earlier start
+      transition={{ delay: index * 0.15 }} // small stagger per card
       className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
     >
       <div className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col">
-        <img
-          src={icon}
-          alt="web-development"
-          className="w-16 h-16 object-contain"
-        />
-
+        <img src={icon} alt={title} className="w-16 h-16 object-contain" />
         <h3 className="text-white text-[20px] font-bold text-center">
           {title}
         </h3>
@@ -43,11 +69,43 @@ const ServiceCard = ({ index, title, icon }) => (
 const About = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+      {/* <motion.div variants={textVariant()}>
         <SectionDivider />
         <p className={styles.sectionSubText}>Introduction</p>
         <h2 className={styles.sectionHeadText}>Overview.</h2>
-      </motion.div>
+      </motion.div> */}
+
+      {/* HEADER SECTION */}
+      <div className="mb-10 text-left">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+          viewport={{ once: false, amount: 0.3 }}
+        >
+          <SectionDivider />
+        </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          viewport={{ once: false, amount: 0.3 }}
+          className={styles.sectionSubText}
+        >
+          Introduction
+        </motion.p>
+
+        <motion.h2
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.0, delay: 0.7, ease: "easeOut" }}
+          viewport={{ once: false, amount: 0.3 }}
+          className={styles.sectionHeadText}
+        >
+          About Me
+        </motion.h2>
+      </div>
 
       <motion.div
         variants={fadeIn("", "tween", 0.3, 2)} // smoother timing
@@ -223,4 +281,3 @@ export default SectionWrapper(About, "about");
 // };
 
 // export default SectionWrapper(About, "about");
-
