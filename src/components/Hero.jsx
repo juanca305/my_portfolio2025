@@ -29,7 +29,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className={`${styles.heroSubText} mt-2 text-white-100 max-w-md sm:max-w-lg break-normal`}
+            className={`${styles.heroSubText} mt-2 mb-6 text-white-100 max-w-md sm:max-w-lg break-normal`}
           >
             I develop <span className="text-[#915eff]">3D visuals</span> user{" "}
             <br className="sm:block hidden" /> interfaces and web applications.
