@@ -20,15 +20,16 @@ const Hero = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className={`${styles.heroHeadText} text-white`}
+            className={`${styles.heroHeadText} text-white max-w-lg sm:max-w-xl break-words`}
           >
             Hi, I'm <span className="text-[#915eff]">Juan Carlos</span>
           </motion.h1>
+
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className={`${styles.heroSubText} mt-2 text-white-100`}
+            className={`${styles.heroSubText} mt-2 text-white-100 max-w-md sm:max-w-lg break-normal`}
           >
             I develop <span className="text-[#915eff]">3D visuals</span> user{" "}
             <br className="sm:block hidden" /> interfaces and web applications.

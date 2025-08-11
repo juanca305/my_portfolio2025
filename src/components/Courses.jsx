@@ -50,7 +50,7 @@ const Courses = () => {
         <SectionDivider />
       </motion.div>
 
-      <motion.p
+      {/* <motion.p
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
@@ -66,6 +66,26 @@ const Courses = () => {
         transition={{ duration: 1.0, delay: 0.7, ease: "easeOut" }}
         viewport={{ once: false, amount: 0.3 }}
         className={styles.sectionHeadText}
+      >
+        Completed Courses & Learning Journey.
+      </motion.h2> */}
+
+      <motion.p
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+        viewport={{ once: false, amount: 0.3 }}
+        className={`${styles.sectionSubText} max-w-xl mx-auto break-words sm:text-base text-sm`}
+      >
+        What I've Learned lately
+      </motion.p>
+
+      <motion.h2
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.0, delay: 0.7, ease: "easeOut" }}
+        viewport={{ once: false, amount: 0.3 }}
+        className={`${styles.sectionHeadText} max-w-3xl mx-auto break-words leading-tight sm:text-4xl text-3xl`}
       >
         Completed Courses & Learning Journey.
       </motion.h2>
