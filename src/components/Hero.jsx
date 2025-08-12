@@ -36,7 +36,7 @@ const Hero = () => {
             className={`${styles.heroSubText} mt-2 mb-6 text-white-100 max-w-md sm:max-w-lg break-normal`}
           >
             I develop <span className="text-[#915eff]">3D visuals</span> user{" "}
-            <br className="sm:block hidden mb-2" /> interfaces and web
+            <br className="sm:block hidden" /> interfaces and web
             applications.
           </motion.p>
         </div>
