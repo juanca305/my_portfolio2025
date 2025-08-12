@@ -15,7 +15,8 @@ const Hero = () => {
         </div>
 
         {/* Intro Text (Some more PENDING!!! space)*/}
-        <div className="flex-1 mb-2"> 
+        {/* <div className="flex-1 mb-2">  */}
+        <div className="flex-1 mb-10 sm:mb-2">
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -32,7 +33,8 @@ const Hero = () => {
             className={`${styles.heroSubText} mt-2 mb-6 text-white-100 max-w-md sm:max-w-lg break-normal`}
           >
             I develop <span className="text-[#915eff]">3D visuals</span> user{" "}
-            <br className="sm:block hidden mb-2" /> interfaces and web applications.
+            <br className="sm:block hidden mb-2" /> interfaces and web
+            applications.
           </motion.p>
         </div>
 
