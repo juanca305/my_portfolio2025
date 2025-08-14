@@ -62,7 +62,7 @@ const ProjectCard = ({
             loading="lazy"
           />
 
-          <div className="absolute inset-0 flex justify-end items-start m-3 gap-2">
+          <div className="absolute top-2 right-2 flex gap-2 sm:top-3 sm:right-3">
             {/* Live site icon */}
             <div className="relative group">
               <div className="absolute bottom-12 left-1/2 -translate-x-1/2 px-2 py-1 bg-black text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10">
