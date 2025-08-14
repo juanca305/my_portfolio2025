@@ -97,7 +97,7 @@ const ProjectCard = ({
           </div>
         </div>
 
-        <div className="mt-5 flex flex-col justify-between min-h-[160px] h-full">
+        {/* <div className="mt-5 flex flex-col justify-between min-h-[160px] h-full">
           <h3 className="text-white font-bold text-[24px]">{name}</h3>
           <p className="mt-2 text-secondary text-[14px]">{description}</p>
 
@@ -114,6 +114,34 @@ const ProjectCard = ({
         </div>
 
         <div className="mt-12 flex flex-wrap gap-2">
+          {tags.map((tag) => (
+            <span
+              key={tag.name}
+              className={`text-[12px] px-3 py-1 rounded-full font-medium border border-[#2a2a40] shadow-sm hover:shadow-md hover:scale-105 transition-all duration-200 ${tag.color}`}
+            >
+              #{tag.name}
+            </span>
+          ))}
+        </div> */}
+
+        <div className="mt-5 flex flex-col justify-between flex-grow">
+          <h3 className="text-white font-bold text-[24px]">{name}</h3>
+          <p className="mt-2 text-secondary text-[14px]">{description}</p>
+
+          {date && (
+            <div className="mt-4 mb-4 w-fit px-3 py-1 rounded-full text-[12px] font-medium bg-gradient-to-r from-[#1e1e2e] to-[#0f0f1f] text-gray-300 border border-[#3a3a50] shadow-sm shadow-black/30 flex items-center gap-2 hover:scale-[1.03] transition-transform duration-200">
+              <span className="text-blue-400">📅</span>
+              {new Date(date).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </div>
+          )}
+        </div>
+
+        {/* Tags */}
+        <div className="mt-6 sm:mt-12 flex flex-wrap gap-2">
           {tags.map((tag) => (
             <span
               key={tag.name}
