@@ -51,19 +51,33 @@ const Contact = () => {
 
     // 3. Proceed with sending
     setLoading(true);
+    // emailjs
+    //   .send(
+    //     "service_t5bsh1x",
+    //     "template_kd9ktwi",
+    //     {
+    //       from_name: form.name,
+    //       to_name: "Juan Carlos",
+    //       from_email: form.email,
+    //       to_email: "jc.rdguez64@gmail.com",
+    //       message: form.message,
+    //     },
+    //     "mXD8pEO6WEymBAvUi"
+    //   )
     emailjs
       .send(
-        "service_t5bsh1x",
-        "template_kd9ktwi",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
           to_name: "Juan Carlos",
           from_email: form.email,
-          to_email: "jc.rdguez64@gmail.com",
+          to_email: import.meta.env.VITE_CONTACT_EMAIL,
           message: form.message,
         },
-        "mXD8pEO6WEymBAvUi"
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
+
       .then(() => {
         setLoading(false);
         setFeedback({
@@ -83,21 +97,13 @@ const Contact = () => {
   };
 
   useEffect(() => {
-    if (feedback.message) {
-      const fadeTimer = setTimeout(() => {
-        const toast = document.getElementById("feedback-toast");
-        if (toast) toast.classList.add("animate-fadeOut");
-      }, 4500);
+    if (!feedback.message) return;
 
-      const clearTimer = setTimeout(() => {
-        setFeedback({ type: "", message: "" });
-      }, 5000);
+    const timer = setTimeout(() => {
+      setFeedback({ type: "", message: "" });
+    }, 5000);
 
-      return () => {
-        clearTimeout(fadeTimer);
-        clearTimeout(clearTimer);
-      };
-    }
+    return () => clearTimeout(timer);
   }, [feedback]);
 
   return (
