@@ -51,19 +51,7 @@ const Contact = () => {
 
     // 3. Proceed with sending
     setLoading(true);
-    // emailjs
-    //   .send(
-    //     "service_t5bsh1x",
-    //     "template_kd9ktwi",
-    //     {
-    //       from_name: form.name,
-    //       to_name: "Juan Carlos",
-    //       from_email: form.email,
-    //       to_email: "jc.rdguez64@gmail.com",
-    //       message: form.message,
-    //     },
-    //     "mXD8pEO6WEymBAvUi"
-    //   )
+
     emailjs
       .send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
