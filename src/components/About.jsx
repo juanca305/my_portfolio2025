@@ -125,7 +125,7 @@ const About = () => {
         viewport={{ once: false, amount: 0.1 }} // more sensitive on mobile
       >
         <motion.span
-          className="bg-gradient-to-r from-[#6a4fff] to-[#7d59ff] text-white px-2 py-1 rounded-full text-base font-semibold shadow-md flex items-center gap-1"
+          className="bg-gradient-to-r from-[#6a4fff] to-[#7d59ff] text-white px-4 py-1 rounded-full text-base font-semibold shadow-md flex justify-between items-center gap-1"
           animate={{ y: [0, -3, 0] }}
           transition={{
             duration: 2,
@@ -143,7 +143,7 @@ const About = () => {
         </motion.span>
 
         <motion.span
-          className="bg-gradient-to-r from-[#2ca66d] to-[#38c58b] text-white px-2 py-1 rounded-full text-base font-semibold shadow-md flex items-center gap-1"
+          className="bg-gradient-to-r from-[#2ca66d] to-[#38c58b] text-white px-4 py-1 rounded-full text-base font-semibold shadow-md flex justify-between items-center gap-1"
           animate={{ y: [0, -3, 0] }}
           transition={{
             duration: 2.1,
@@ -161,7 +161,7 @@ const About = () => {
         </motion.span>
 
         <motion.span
-          className="bg-gradient-to-r from-[#1e63d0] to-[#3391ff] text-white px-2 py-1 rounded-full text-base font-semibold shadow-md flex items-center gap-1"
+          className="bg-gradient-to-r from-[#1e63d0] to-[#3391ff] text-white px-4 py-1 rounded-full text-base font-semibold shadow-md flex justify-between items-center gap-1"
           animate={{ y: [0, -3, 0] }}
           transition={{
             duration: 2.2,
@@ -180,7 +180,7 @@ const About = () => {
         </motion.span>
 
         <motion.span
-          className="bg-gradient-to-r from-[#d96b2f] to-[#ff925d] text-white px-3 py-1 rounded-full text-base font-semibold shadow-md flex items-center gap-1 w-full max-w-[200px]"
+          className="bg-gradient-to-r from-[#d96b2f] to-[#ff925d] text-white px-4 py-1 rounded-full text-base font-semibold shadow-md flex justify-between items-center gap-1 w-full max-w-[200px]"
           animate={{ y: [0, -3, 0] }}
           transition={{
             duration: 2.3,
