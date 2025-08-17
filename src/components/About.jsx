@@ -121,7 +121,7 @@ const About = () => {
         variants={fadeIn("up", "spring", 0.2, 0.75)}
         initial="hidden"
         animate="show" // animate immediately on mount
-        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-4 justify-items-center"
+        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-4 justify-items-center items-stretch"
         viewport={{ once: false, amount: 0.1 }} // more sensitive on mobile
       >
         <motion.span
@@ -143,7 +143,7 @@ const About = () => {
         </motion.span>
 
         <motion.span
-          className="bg-gradient-to-r from-[#2ca66d] to-[#38c58b] text-white px-4 py-2 rounded-full text-base font-semibold shadow-md flex items-center gap-2"
+          className="bg-gradient-to-r from-[#2ca66d] to-[#38c58b] text-white px-4 py-1 rounded-full text-base font-semibold shadow-md flex items-center gap-2"
           animate={{ y: [0, -3, 0] }}
           transition={{
             duration: 2.1,
@@ -161,7 +161,7 @@ const About = () => {
         </motion.span>
 
         <motion.span
-          className="bg-gradient-to-r from-[#1e63d0] to-[#3391ff] text-white px-4 py-2 rounded-full text-base font-semibold shadow-md flex items-center gap-2"
+          className="bg-gradient-to-r from-[#1e63d0] to-[#3391ff] text-white px-4 py-1 rounded-full text-base font-semibold shadow-md flex items-center gap-2"
           animate={{ y: [0, -3, 0] }}
           transition={{
             duration: 2.2,
@@ -180,7 +180,7 @@ const About = () => {
         </motion.span>
 
         <motion.span
-          className="bg-gradient-to-r from-[#d96b2f] to-[#ff925d] text-white px-4 py-2 rounded-full text-base font-semibold shadow-md flex items-center gap-2"
+          className="bg-gradient-to-r from-[#d96b2f] to-[#ff925d] text-white px-4 py-1 rounded-full text-base font-semibold shadow-md flex items-center gap-2"
           animate={{ y: [0, -3, 0] }}
           transition={{
             duration: 2.3,
