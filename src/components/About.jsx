@@ -120,7 +120,8 @@ const About = () => {
 
       <motion.div
         variants={fadeIn("up", "spring", 0.2, 0.75)}
-        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-4 justify-items-center"
+        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-4 justify-items-center min-h-[120px]"
+        viewport={{ once: false, amount: 0.1 }} // more sensitive on mobile
       >
         <motion.span
           className="bg-gradient-to-r from-[#6a4fff] to-[#7d59ff] text-white px-4 py-2 rounded-full text-base font-semibold shadow-md flex items-center gap-2"
