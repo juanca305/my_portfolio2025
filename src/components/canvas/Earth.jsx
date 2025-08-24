@@ -30,15 +30,6 @@
 
 // export default Earth;
 
-
-
-
-
-
-
-
-
-
 //********************************************************** */
 import React, { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
@@ -66,17 +57,6 @@ const Earth = ({ isMobile }) => {
 };
 
 export default Earth;
-
-
-
-
-
-
-
-
-
-
-
 
 //**********************************************************************
 // import React, { Suspense } from "react";

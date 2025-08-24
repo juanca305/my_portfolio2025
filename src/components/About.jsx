@@ -88,9 +88,17 @@ const About = () => {
           <br />
           <br />
           With a{" "}
-          <span className="text-white font-semibold">
+          {/* <span className="font-semibold bg-gradient-to-r from-[#00cea8] to-[#bf61ff] bg-[length:200%_200%] animate-gradient bg-clip-text text-transparent text-gradient-shadow">
             Bachelor’s degree in Computer Science
-          </span>
+          </span> */}
+          <motion.span
+            className="font-semibold bg-gradient-to-r from-[#00cea8] to-[#bf61ff] bg-[length:200%_200%] animate-gradient bg-clip-text text-transparent text-gradient-shadow"
+            initial={{ opacity: 0, y: 5 }} // start slightly below and invisible
+            animate={{ opacity: 1, y: 0 }} // fade in and slide up
+            transition={{ duration: 1.5, ease: "easeOut" }} // smooth timing
+          >
+            Bachelor’s degree in Computer Science
+          </motion.span>
           , I bring a strong foundation in algorithms, data structures, and
           software engineering principles—skills that shape how I architect
           projects for real-world use.
