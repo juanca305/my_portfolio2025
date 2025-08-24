@@ -9,7 +9,6 @@ import { fadeIn, textVariant } from "../utils/motion";
 import SectionDivider from "./SectionDivider";
 import { github } from "../assets";
 
-
 const ServiceCard = ({ index, title, icon }) => (
   <Tilt
     tiltMaxAngleX={45}
@@ -127,7 +126,7 @@ const About = () => {
       </motion.p>
 
       <div className="mt-6">
-        <a
+        {/* <a
           href="https://github.com/juanca305/my_portfolio2025"
           target="_blank"
           rel="noopener noreferrer"
@@ -135,7 +134,35 @@ const About = () => {
         >
           <img src={github} alt="GitHub" className="w-5 h-5 mr-2" />
           View Code
-        </a>
+        </a> */}
+
+        {/* <motion.a
+          href="https://github.com/juanca305/my_portfolio2025"
+          target="_blank"
+          rel="noopener noreferrer"
+          // className="bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors text-sm sm:text-base"
+          className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#00cea8] to-[#bf61ff] text-white font-semibold rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 3.25, delay: 1.5, ease: "easeOut" }}
+        >
+          <img src={github} alt="GitHub" className="w-5 h-5 mr-2" />
+          View Code
+        </motion.a> */}
+
+        <motion.a
+          href="https://github.com/juanca305/my_portfolio2025"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#00cea8] to-[#bf61ff] text-white font-semibold rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+          initial={{ opacity: 0, y: -10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+          viewport={{ once: false, amount: 0.3 }}
+        >
+          <img src={github} alt="GitHub" className="w-5 h-5 mr-2" />
+          View Code
+        </motion.a>
       </div>
 
       <div className="mt-20 flex flex-wrap gap-10">
