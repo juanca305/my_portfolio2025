@@ -7,6 +7,8 @@ import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 import SectionDivider from "./SectionDivider";
+import { github } from "../assets";
+
 
 const ServiceCard = ({ index, title, icon }) => (
   <Tilt
@@ -123,6 +125,18 @@ const About = () => {
       >
         Let’s build something people will love to interact with.
       </motion.p>
+
+      <div className="mt-6">
+        <a
+          href="https://github.com/juanca305/my_portfolio2025"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#00cea8] to-[#bf61ff] text-white font-semibold rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+        >
+          <img src={github} alt="GitHub" className="w-5 h-5 mr-2" />
+          View Code
+        </a>
+      </div>
 
       <div className="mt-20 flex flex-wrap gap-10">
         {services.map((service, index) => (

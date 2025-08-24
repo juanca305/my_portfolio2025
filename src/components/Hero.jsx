@@ -36,8 +36,7 @@ const Hero = () => {
             className={`${styles.heroSubText} mt-2 mb-6 text-white-100 max-w-md sm:max-w-lg break-normal`}
           >
             I develop <span className="text-[#915eff]">3D visuals</span> user{" "}
-            <br className="sm:block hidden" /> interfaces and web
-            applications.
+            <br className="sm:block hidden" /> interfaces and web applications.
           </motion.p>
         </div>
 
@@ -90,6 +89,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      
 
       <MergedCanvas scene="computers" />
 
