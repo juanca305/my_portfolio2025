@@ -30,6 +30,9 @@ import icon_experience_2 from './tech/icon_experience_2.png';
 import icon_experience_3 from './tech/icon_experience_3.png';
 import icon_experience_4 from './tech/icon_experience_4.png';
 
+import chatgpt from "./tech/chatgpt.png";
+import chatgpt2 from "./tech/chatgpt2.png";
+
 
 //import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
@@ -128,5 +131,7 @@ export {
   jc_logo_rounded,
   freecodecamp,
   icon_book,
-  icon_jsmastery
+  icon_jsmastery,
+  chatgpt,
+  chatgpt2
 };

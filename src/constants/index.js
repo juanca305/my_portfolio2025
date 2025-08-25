@@ -52,6 +52,9 @@ import {
   freecodecamp,
   icon_jsmastery,
   icon_book,
+  chatgpt,
+  chatgpt2
+  
 } from "../assets";
 
 export const navLinks = [
@@ -155,6 +158,14 @@ const technologies = [
   {
     name: "Express JS",
     icon: expressjs,
+  },
+  {
+    name: "ChatGpt",
+    icon: chatgpt,
+  },
+  {
+    name: "Stripe",
+    icon: stripe,
   },
 ];
 
